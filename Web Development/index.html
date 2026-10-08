@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>Sorry Cutie 🥺❤️</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color:white;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255,0,100,0.55),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(50,0,255,0.55),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #030303,
+            #09000a,
+            #02020a
+        );
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page{
+
+    width:100%;
+    height:100dvh;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:15px;
+
+    overflow:hidden;
+}
+
+.page.active{
+    display:flex;
+}
+
+
+/* =========================
+   EMOTIONAL EMOJI
+========================= */
+
+.main-emoji{
+
+    font-size:125px;
+
+    line-height:1;
+
+    margin-bottom:28px;
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+h1{
+
+    font-size:36px;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    margin-bottom:38px;
+
+    max-width:95%;
+}
+
+
+/* =========================
+   OTHER HEADING
+========================= */
+
+h2{
+
+    font-size:28px;
+
+    line-height:1.25;
+
+    margin-bottom:22px;
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-shrink:0;
+}
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff0080,
+            #b000ff
+        );
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    padding:15px 34px;
+
+    border-radius:50px;
+
+    box-shadow:
+        0 8px 25px rgba(255,0,150,0.25);
+
+    cursor:pointer;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+button:active{
+    transform:scale(0.94);
+}
+
+
+/* =========================
+   NO BUTTON
+========================= */
+
+.no-btn{
+    position:relative;
+}
+
+
+/* =========================
+   APOLOGY
+========================= */
+
+.apology{
+
+    font-size:26px;
+
+    line-height:1.55;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+    flex-shrink:0;
+}
+
+
+/* =================================================
+   VIDEO PAGE
+================================================= */
+
+.video-page{
+
+    justify-content:flex-start;
+
+    padding-top:8px;
+
+    padding-bottom:8px;
+
+}
+
+
+/* =========================
+   VIDEO BOX
+========================= */
+
+.video-box{
+
+    width:100%;
+
+    max-width:460px;
+
+    background:#000;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    flex-shrink:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    max-height:65dvh;
+}
+
+
+/* =========================
+   VIDEO TITLE
+========================= */
+
+.video-title{
+
+    width:100%;
+
+    height:44px;
+
+    min-height:44px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#000;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-box video{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    max-height:calc(65dvh - 44px);
+
+    min-height:0;
+
+    background:#000;
+
+    object-fit:cover;
+
+    object-position:center;
+}
+
+
+/* =========================
+   HIDDEN UNTIL LAST 2 SEC
+========================= */
+
+.after-video{
+
+    display:none;
+
+    width:100%;
+
+    flex-shrink:0;
+}
+
+.after-video.show{
+
+    display:block;
+}
+
+
+/* =========================
+   VIDEO QUESTION
+========================= */
+
+.video-question{
+
+    width:100%;
+
+    font-size:23px;
+
+    line-height:1.2;
+
+    font-weight:bold;
+
+    margin-top:10px;
+
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   FINAL IMAGE
+========================= */
+
+.final-img{
+
+    width:90%;
+
+    max-width:400px;
+
+    max-height:58dvh;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    flex-shrink:1;
+}
+
+
+.final-text{
+
+    font-size:23px;
+
+    font-weight:bold;
+
+    line-height:1.4;
+
+    max-width:95%;
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media(max-width:600px){
+
+    .page{
+        padding:12px;
+    }
+
+
+    .main-emoji{
+
+        font-size:115px;
+
+        margin-bottom:25px;
+
+    }
+
+
+    h1{
+
+        font-size:32px;
+
+        margin-bottom:32px;
+
+    }
+
+
+    h2{
+
+        font-size:26px;
+
+    }
+
+
+    .apology{
+
+        font-size:24px;
+
+        margin-bottom:22px;
+
+    }
+
+
+    button{
+
+        font-size:18px;
+
+        padding:14px 30px;
+
+    }
+
+
+    .buttons{
+
+        gap:16px;
+
+    }
+
+
+    /* VIDEO */
+
+    .video-page{
+
+        padding-top:8px;
+
+        padding-bottom:8px;
+
+    }
+
+
+    .video-box{
+
+        width:100%;
+
+        max-width:440px;
+
+        max-height:58dvh;
+
+    }
+
+
+    .video-title{
+
+        height:42px;
+
+        min-height:42px;
+
+        font-size:19px;
+
+    }
+
+
+    .video-box video{
+
+        max-height:calc(58dvh - 42px);
+
+    }
+
+
+    .video-question{
+
+        font-size:21px;
+
+        margin-top:9px;
+
+        margin-bottom:9px;
+
+    }
+
+
+    .final-img{
+
+        max-height:53dvh;
+
+    }
+
+
+    .final-text{
+
+        font-size:21px;
+
+    }
+
+}
+
+
+/* =================================================
+   SHORT MOBILE SCREEN
+================================================= */
+
+@media(max-width:600px) and (max-height:750px){
+
+    .main-emoji{
+
+        font-size:90px;
+
+        margin-bottom:18px;
+
+    }
+
+
+    h1{
+
+        font-size:28px;
+
+        margin-bottom:24px;
+
+    }
+
+
+    .apology{
+
+        font-size:22px;
+
+    }
+
+
+    button{
+
+        font-size:17px;
+
+        padding:12px 27px;
+
+    }
+
+
+    .video-box{
+
+        max-height:53dvh;
+
+    }
+
+
+    .video-title{
+
+        height:40px;
+
+        min-height:40px;
+
+        font-size:18px;
+
+    }
+
+
+    .video-box video{
+
+        max-height:calc(53dvh - 40px);
+
+    }
+
+
+    .video-question{
+
+        font-size:19px;
+
+        margin-top:7px;
+
+        margin-bottom:7px;
+
+    }
+
+}
+
+
+/* =================================================
+   VERY SHORT SCREEN
+================================================= */
+
+@media(max-width:600px) and (max-height:650px){
+
+    .video-box{
+
+        max-height:50dvh;
+
+    }
+
+
+    .video-title{
+
+        height:38px;
+
+        min-height:38px;
+
+        font-size:17px;
+
+    }
+
+
+    .video-box video{
+
+        max-height:calc(50dvh - 38px);
+
+    }
+
+
+    .video-question{
+
+        font-size:18px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================================
+     PAGE 1
+================================================= -->
+
+<div class="page active" id="page1">
+
+
+    <!-- DUDU KI JAGAH EMOTIONAL EMOJI -->
+
+    <div class="main-emoji">
+        🥺
+    </div>
+
+
+    <!-- PURANI WALI LINE -->
+
+    <h1>
+        Kya Meela Babu Mele Se Naraz Hai? 🥺
+    </h1>
+
+
+    <div class="buttons">
+
+        <button onclick="goToPage(2)">
+            Haan ❤️
+        </button>
+
+
+        <button
+            class="no-btn"
+            id="no1">
+
+            Nahi 😭
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     PAGE 2
+================================================= -->
+
+<div class="page" id="page2">
+
+
+    <div class="main-emoji">
+        🥺
+    </div>
+
+
+    <div class="apology">
+
+        Babu man jao plz 🥺<br>
+
+        itna ghussa ni krte na<br>
+
+        man jao plz ❤️
+
+    </div>
+
+
+    <h2>
+        Ab man gai hona? 🥺
+    </h2>
+
+
+    <div class="buttons">
+
+        <button onclick="goToPage(3)">
+            Haan ❤️
+        </button>
+
+
+        <button
+            class="no-btn"
+            id="no2">
+
+            Nahi 😭
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     PAGE 3
+================================================= -->
+
+<div
+    class="page video-page"
+    id="page3">
+
+
+    <div class="video-box">
+
+
+        <div class="video-title">
+            Sorry Cutie 🥺❤️
+        </div>
+
+
+        <video
+            id="video1"
+            controls
+            playsinline
+            preload="auto">
+
+            <source
+                src="video1.mp4"
+                type="video/mp4">
+
+            Your browser does not support video.
+
+        </video>
+
+
+    </div>
+
+
+    <!--
+       YE PURI CHEEZ VIDEO KE LAST 2 SEC
+       TAK HIDDEN RAHEGI
+    -->
+
+    <div
+        class="after-video"
+        id="afterVideo1">
+
+
+        <div class="video-question">
+            Abhi bhi naraz ho kya? 🥺
+        </div>
+
+
+        <div class="buttons">
+
+
+            <button onclick="goToPage(4)">
+                Haan 😭
+            </button>
+
+
+            <button
+                class="no-btn"
+                id="no3">
+
+                Nahi ❤️
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     PAGE 4
+================================================= -->
+
+<div
+    class="page video-page"
+    id="page4">
+
+
+    <div class="video-box">
+
+
+        <div class="video-title">
+            Ap k Favourite Flowers 🌸❤️
+        </div>
+
+
+        <video
+            id="video2"
+            controls
+            playsinline
+            preload="auto">
+
+            <source
+                src="video2.mp4"
+                type="video/mp4">
+
+            Your browser does not support video.
+
+        </video>
+
+
+    </div>
+
+
+    <!--
+       YE BHI VIDEO KE LAST 2 SEC
+       TAK HIDDEN RAHEGA
+    -->
+
+    <div
+        class="after-video"
+        id="afterVideo2">
+
+
+        <div class="video-question">
+            Ab to man jao plz 🥺❤️
+        </div>
+
+
+        <div class="buttons">
+
+
+            <button onclick="goToPage(5)">
+                Haan ❤️
+            </button>
+
+
+            <button
+                class="no-btn"
+                id="no4">
+
+                Nahi 😭
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     PAGE 5
+================================================= -->
+
+<div class="page" id="page5">
+
+
+    <img
+        src="final.jpg"
+        class="final-img">
+
+
+    <div class="final-text">
+
+        Ab to man jao plz 🥺❤️<br><br>
+
+        Mane bht mahnat se ye website aur videos bnaye hain...<br><br>
+
+        Plzz man jao 🥺❤️
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =================================================
+   PAGE CHANGE
+================================================= */
+
+function goToPage(pageNumber){
+
+
+    /*
+       Sab pages hide
+    */
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+
+    /*
+       Required page show
+    */
+
+    const nextPage =
+        document.getElementById(
+            "page" + pageNumber
+        );
+
+
+    nextPage.classList.add("active");
+
+
+    /*
+       Saare videos stop
+    */
+
+    document
+        .querySelectorAll("video")
+        .forEach(video => {
+
+            video.pause();
+
+            video.currentTime = 0;
+
+        });
+
+
+    /*
+       Dono after-video messages
+       dobara hide
+    */
+
+    document
+        .querySelectorAll(".after-video")
+        .forEach(element => {
+
+            element.classList.remove("show");
+
+        });
+
+
+    /*
+       FIRST VIDEO
+    */
+
+    if(pageNumber === 3){
+
+        const video1 =
+            document.getElementById("video1");
+
+
+        setTimeout(() => {
+
+            video1.play().catch(() => {
+
+                /*
+                   Agar browser autoplay
+                   block kare to user
+                   play button daba sakta hai.
+                */
+
+            });
+
+        },300);
+
+    }
+
+
+    /*
+       SECOND VIDEO
+    */
+
+    if(pageNumber === 4){
+
+        const video2 =
+            document.getElementById("video2");
+
+
+        setTimeout(() => {
+
+            video2.play().catch(() => {
+
+                /*
+                   Browser autoplay block
+                   kar sakta hai.
+                */
+
+            });
+
+        },300);
+
+    }
+
+}
+
+
+
+/* =================================================
+   SHOW MESSAGE 2 SECONDS BEFORE VIDEO ENDS
+================================================= */
+
+function setupVideoTimer(videoId, afterId){
+
+
+    const video =
+        document.getElementById(videoId);
+
+
+    const after =
+        document.getElementById(afterId);
+
+
+    let shown = false;
+
+
+    /*
+       Video time continuously check
+    */
+
+    video.addEventListener(
+        "timeupdate",
+        function(){
+
+
+            /*
+               Duration available honi chahiye
+            */
+
+            if(!video.duration){
+                return;
+            }
+
+
+            /*
+               EXACTLY LAST 2 SECONDS
+            */
+
+            if(
+                video.currentTime >=
+                video.duration - 2
+            ){
+
+                if(!shown){
+
+                    shown = true;
+
+                    after.classList.add("show");
+
+                }
+
+            }
+
+        }
+    );
+
+
+    /*
+       Video dobara start ho
+       to message hide
+    */
+
+    video.addEventListener(
+        "play",
+        function(){
+
+            shown = false;
+
+            after.classList.remove("show");
+
+        }
+    );
+
+
+    /*
+       Video load hone par hide
+    */
+
+    video.addEventListener(
+        "loadedmetadata",
+        function(){
+
+            shown = false;
+
+            after.classList.remove("show");
+
+        }
+    );
+
+}
+
+
+
+/* =================================================
+   SETUP BOTH VIDEOS
+================================================= */
+
+setupVideoTimer(
+    "video1",
+    "afterVideo1"
+);
+
+
+setupVideoTimer(
+    "video2",
+    "afterVideo2"
+);
+
+
+
+/* =================================================
+   MOVING NO BUTTON
+================================================= */
+
+function moveNoButton(button){
+
+
+    const page =
+        button.closest(".page");
+
+
+    const pageWidth =
+        page.clientWidth;
+
+
+    const pageHeight =
+        page.clientHeight;
+
+
+    const buttonWidth =
+        button.offsetWidth;
+
+
+    const buttonHeight =
+        button.offsetHeight;
+
+
+    /*
+       Button screen ke bahar
+       nahi jayega.
+    */
+
+    const maxX =
+        Math.max(
+            30,
+            (pageWidth / 2)
+            -
+            (buttonWidth / 2)
+            -
+            15
+        );
+
+
+    const maxY =
+        Math.max(
+            30,
+            (pageHeight / 2)
+            -
+            (buttonHeight / 2)
+            -
+            15
+        );
+
+
+    let x;
+
+    let y;
+
+
+    do{
+
+
+        x =
+            (Math.random() * 2 - 1)
+            * maxX;
+
+
+        y =
+            (Math.random() * 2 - 1)
+            * maxY;
+
+
+    }
+    while(
+
+        Math.abs(x) < 120 &&
+        Math.abs(y) < 70
+
+    );
+
+
+    button.style.position =
+        "absolute";
+
+
+    button.style.left =
+        "50%";
+
+
+    button.style.top =
+        "50%";
+
+
+    button.style.transform =
+        `translate(
+            calc(-50% + ${x}px),
+            calc(-50% + ${y}px)
+        )`;
+
+}
+
+
+
+/* =================================================
+   NO BUTTONS
+================================================= */
+
+const noButtons = [
+
+
+    document.getElementById("no1"),
+
+
+    document.getElementById("no2"),
+
+
+    document.getElementById("no3"),
+
+
+    document.getElementById("no4")
+
+
+];
+
+
+noButtons.forEach(button => {
+
+
+    /*
+       PC / Laptop
+    */
+
+    button.addEventListener(
+        "mouseenter",
+        function(){
+
+            moveNoButton(button);
+
+        }
+    );
+
+
+    /*
+       Mobile
+    */
+
+    button.addEventListener(
+        "touchstart",
+        function(event){
+
+            event.preventDefault();
+
+            moveNoButton(button);
+
+        },
+        {
+            passive:false
+        }
+    );
+
+});
+
+
+</script>
+
+</body>
+</html>
